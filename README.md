@@ -19,7 +19,8 @@ Next, learning how APIs can significantly elevate and automate our day-to-day li
 * python
 * flask
 * openai
-* see requirements.txt
+
+[requirements.txt](https://github.com/ryanisho/sakura/blob/main/requirements.txt)
 
 ## Authors
 
