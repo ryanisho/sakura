@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title -->
+    <title>Search - Sakura</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="../static/vendor/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="../static/css/theme.min.css">
+    <link rel="stylesheet" href="../static/css/docs.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  </head>
+  <body class="navbar-sidebar-aside-lg">
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="navbar navbar-expand navbar-fixed navbar-end navbar-light navbar-sticky-lg-top" style="background-color:rgba(43,43,43,255);">
+      <div class="container-fluid">
+        <nav class="navbar-nav-wrap">
+          <div class="row flex-grow-1">
+            <!-- Default Logo -->
+            <div class="docs-navbar-sidebar-container d-flex align-items-center mb-2 mb-lg-0">
+              <a class="navbar-brand" href="/" aria-label="Space">
+                <img class="navbar-brand-logo" src="../static/svg/logos/logo.png" alt="Logo">
+              </a>
+              <!-- <a href="changelog"><span class="badge bg-soft-primary text-primary">v1.0</span></a> -->
+            </div>
+            <!-- End Default Logo -->
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </nav>
+      </div>
+    </header>
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main" style="background-color:rgba(43,43,43,255);">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-sidebar navbar-vertical navbar-light ">
+        <!-- Navbar Toggle -->
+        <button type="button" class="navbar-toggler btn btn-white d-grid w-100" data-bs-toggle="collapse" data-bs-target="#navbarVerticalNavMenu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarVerticalNavMenu">
+          <span class="d-flex justify-content-between align-items-center">
+            <span class="h3 mb-0">Nav menu</span>
+            <span class="navbar-toggler-default">
+              <i class="bi-list"></i>
+            </span>
+            <span class="navbar-toggler-toggled">
+              <i class="bi-x"></i>
+            </span>
+          </span>
+        </button>
+        <!-- End Navbar Toggle -->
+        <!-- Navbar Collapse -->
+        <div id="navbarVerticalNavMenu" class="collapse navbar-collapse">
+          <div class="navbar-brand-wrapper border-end" style="height: auto; background-color: rgba(43,43,43,255);">
+            <!-- Default Logo -->
+            <div class="d-flex align-items-center mb-3">
+              <a class="navbar-brand" href="/" aria-label="Space">
+                <img class="navbar-brand-logo" src="../static/svg/logos/logo.png" alt="Logo">
+              </a>
+              <!-- <a class="navbar-brand-badge" href="changelog"><span class="badge bg-soft-primary text-primary ms-2">v4.3</span></a> -->
+            </div>
+            <!-- End Default Logo -->
+          </div>
+          <div class="docs-navbar-sidebar-aside-body navbar-sidebar-aside-body" style="background-color:rgba(43,43,43,255); height: 100vh;">
+            <ul id="navbarSettings" class="navbar-nav nav nav-vertical nav-tabs nav-tabs-borderless nav-sm">
+              <li class="nav-item">
+                <span class="nav-subtitle">Documentation</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/">Introduction</a>
+              </li>
+              <br>
+              <li class="nav-item">
+                <span class="nav-subtitle">Getting started</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="search">Search</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ntrlang">Python to Natural Language</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="debug">Debug</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- End Navbar Collapse -->
+      </nav>
+      <!-- End Navbar -->
+      <!-- Content -->
+      <div class="container">
+        <div class="navbar-sidebar-aside-content content-space-md-2" style="height: 100vh">
+          <div class="d-flex align-items-center" style="padding-top: 80px;">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+              <center>
+                <h1 class="display-5 mb-3" style="display: inline; background-image: linear-gradient(90deg, #eebeb0, #F9E9E5); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-align:center; font-size: 2.5rem;">Code </h1>
+                <h1 class="display-5 mb-3" style="display: inline; color: #f8f7f3; text-align:center; font-size: 2.5rem;">faster than you can think.</h1>
+              </center>
+              <br>
+              <form method="post" action="/search">
+                <div class="container h-100">
+                  <div class="d-flex justify-content-center h-100">
+                    <div class="searchbar">
+                      <input class="search_input" type="text" name="input" id="input" placeholder="Search..." required />
+                      <button href="/search" class="search_icon" style="background-color: transparent;">
+                        <i class="bi bi-search"></i>
+                      </button>
+                    </div>
+                    <br>
+                  </div>
+                </div>
+              </form>
+              <br>
+              <h1 class="mb-3" style="display: inline; color: #f8f7f3; text-align:center; font-size: 1.5em; padding-left: 20px;">Output: </h1>
+              <div style="padding: 25px; height: 40vh; background-color: #171e25; color: white; border-radius: 25px; resize: none; font-size: 13px;"> {% if result %} <strong>
+                  <p style="font-family: 'Courier Prime', monospace;">{{ result }}</p>
+                </strong> {% endif %} </div>
+              <div class="col-lg-1"></div>
+            </div>
+          </div>
+        </div>
+    </main>
+    <!-- JS Global Compulsory  -->
+    <script src="../static/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS Implementing Plugins -->
+    <script src="../static/vendor/hs-header/dist/hs-header.min.js"></script>
+    <script src="../static/vendor/list.js/dist/list.min.js"></script>
+    <script src="../static/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+    <script src="../static/vendor/prism/prism.js"></script>
+    <script src="../static/other/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/other/vendor/bootstrap.bundle.min.js"></script>
+    <script src="../static/other/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="../static/other/vendor/waypoints/jquery.waypoints.min.js"></script>
+    <script src="../static/other/vendor/counterup/counterup.min.js"></script>
+    <script src="../static/other/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../static/other/vendor/venobox/venobox.min.js"></script>
+    <script src="../static/other/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="../static/other/vendor/typed.js/typed.min.js"></script>
+    <script src="../static/other/vendor/aos/aos.js"></script>
+    <!-- JS Front -->
+    <script src="../static/js/theme.min.js"></script>
+    <script src="../static/js/main.js"></script>
+    <!-- JS Plugins Init. -->
+  </body>
+</html>
