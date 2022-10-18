@@ -1,7 +1,8 @@
 # Sakura
 
 A Flask-based web application that leverages machine learning and artificial intelligence to allow users to create, understand, and debug Python code.
-![Sakura Logo](http://url/to/img.png)
+
+![Sakura Logo](https://github.com/ryanisho/sakura/blob/main/static/svg/logos/logo.png)
 ## Description
 
 We wanted to create a program that would help individuals better understand computer programming (Python, in particular) through a user-friendly and accessible interface.
