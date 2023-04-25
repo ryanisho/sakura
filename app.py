@@ -14,12 +14,13 @@ Ryan Ho (rh564@cornell.edu)
 """
 
 #Import modules
-import openai, os
+import os
 from flask import Flask, redirect, render_template, request, url_for
+from request import *
+
 
 #Initiate flask app and integrate API source key
 app = Flask(__name__)
-openai.api_key = "API_KEY_HERE"
 
 #Define route for home index
 @app.route("/")
@@ -31,18 +32,9 @@ def index():
 def search():
     if request.method == "POST":
         input = request.form.get('input')
-
-        response = openai.Completion.create(
-            model="text-davinci-002",
-            prompt=f"Generate the following in Python code: \n\n{input}",
-            temperature=0.1,
-            max_tokens=200,
-            top_p=1.0,
-            frequency_penalty=0.0,
-            presence_penalty=0.0
-        )
-
-        return redirect(url_for("search", result=response.choices[0].text))
+        response = searchCustom(input)
+        # return redirect(url_for("search", result=response.choices[0].text))
+        return redirect(url_for("search", result=response))
 
     result = request.args.get("result")
     return render_template("search.html", result=result)
@@ -52,18 +44,8 @@ def search():
 def debug():
     if request.method == "POST":
         input = request.form.get("input")
-
-        response = openai.Completion.create(
-          model="text-davinci-002",
-          prompt=f"##### Fix bugs in the below function\n\n### Buggy Python\n {input} \n\n###",
-          temperature=0.1,
-          max_tokens=200,
-          top_p=1.0,
-          frequency_penalty=0.0,
-          presence_penalty=0.0,
-          stop=["###"]
-        )
-        return redirect(url_for("debug", result=response.choices[0].text))
+        response = debugCustom(input)
+        return redirect(url_for("debug", result=response))
 
     result = request.args.get("result")
     return render_template("debug.html", result=result)
@@ -73,16 +55,8 @@ def debug():
 def ntrlang():
     if request.method == "POST":
         input = request.form.get('input')
-        response = openai.Completion.create(
-            model="text-davinci-002",
-            prompt=f"Explain the following Python code in a simple and easy to understand manner: \n {input}",
-            temperature=0.1,
-            max_tokens=200,
-            top_p=1.0,
-            frequency_penalty=0.0,
-            presence_penalty=0.0
-        )
-        return redirect(url_for("ntrlang", result=response.choices[0].text))
+        response = ntrCustom(input)
+        return redirect(url_for("ntrlang", result=response))
 
     result = request.args.get("result")
     return render_template("ntrlang.html", result=result)

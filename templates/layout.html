@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title -->
+    <title>Sakura - Code faster than you can think</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="../static/vendor/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="../static/css/theme.min.css">
+    <link rel="stylesheet" href="../static/css/docs.min.css">
+  </head>
+  <body class="navbar-sidebar-aside-lg">
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="navbar navbar-expand navbar-fixed navbar-end navbar-light navbar-sticky-lg-top" style="background-color:rgba(43,43,43,255);">
+      <div class="container-fluid">
+        <nav class="navbar-nav-wrap">
+          <div class="row flex-grow-1">
+            <!-- Default Logo -->
+            <div class="docs-navbar-sidebar-container d-flex align-items-center mb-2 mb-lg-0">
+              <a class="navbar-brand" href="/" aria-label="Space">
+                <img class="navbar-brand-logo" src="../static/svg/logos/logo.png" alt="Logo">
+              </a>
+              <!-- <a href="/changelog"><span class="badge bg-soft-primary text-primary">v1.0</span></a> -->
+            </div>
+            <!-- End Default Logo -->
+            <!-- End Col -->
+          </div>
+          <!-- End Row -->
+        </nav>
+      </div>
+    </header>
+    <!-- ========== END HEADER ========== -->
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main" style="background-color:rgba(43,43,43,255); height: 150vh;">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-sidebar navbar-vertical navbar-light ">
+        <!-- Navbar Toggle -->
+        <button type="button" class="navbar-toggler btn btn-white d-grid w-100" data-bs-toggle="collapse" data-bs-target="#navbarVerticalNavMenu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarVerticalNavMenu">
+          <span class="d-flex justify-content-between align-items-center">
+            <span class="h3 mb-0">Nav menu</span>
+            <span class="navbar-toggler-default">
+              <i class="bi-list"></i>
+            </span>
+            <span class="navbar-toggler-toggled">
+              <i class="bi-x"></i>
+            </span>
+          </span>
+        </button>
+        <!-- End Navbar Toggle -->
+        <!-- Navbar Collapse -->
+        <div id="navbarVerticalNavMenu" class="collapse navbar-collapse">
+          <div class="navbar-brand-wrapper border-end" style="height: auto; background-color: rgba(43,43,43,255);">
+            <!-- Default Logo -->
+            <div class="d-flex align-items-center mb-3">
+              <a class="navbar-brand" href="/" aria-label="Space">
+                <img class="navbar-brand-logo" src="../static/svg/logos/logo.png" alt="Logo">
+              </a>
+              <!-- <a class="navbar-brand-badge" href="/changelog"><span class="badge bg-soft-primary text-primary ms-2">v1.0</span></a> -->
+            </div>
+            <!-- End Default Logo -->
+          </div>
+          <div class="docs-navbar-sidebar-aside-body navbar-sidebar-aside-body" style="background-color:rgba(43,43,43,255); height: 100vh;">
+            <ul id="navbarSettings" class="navbar-nav nav nav-vertical nav-tabs nav-tabs-borderless nav-sm">
+              <li class="nav-item">
+                <span class="nav-subtitle">Documentation</span>
+              </li>
+              <li class="nav-item"> {% if request.path == "/" %} <a class="nav-link active" href="/">Introduction</a> {% else %} <a class="nav-link" href="/">Introduction</a> {% endif %} </li>
+              <br>
+              <li class="nav-item">
+                <span class="nav-subtitle">Getting started</span>
+              </li>
+              <li class="nav-item"> {% if request.path == "/search" %} <a class="nav-link active" href="/search">Search</a> {% else %} <a class="nav-link" href="/search">Search</a> {% endif %} </li>
+              <li class="nav-item"> {% if request.path == "/ntrlang" %} <a class="nav-link active" href="/ntrlang">Python to Natural Language</a> {% else %} <a class="nav-link" href="/ntrlang">Python to Natural Language</a> {% endif %} </li>
+              <li class="nav-item"> {% if request.path == "/debug" %} <a class="nav-link active" href="/debug">Debug</a> {% else %} <a class="nav-link" href="/debug">Debug</a> {% endif %} </li>
+            </ul>
+          </div>
+        </div>
+        <!-- End Navbar Collapse -->
+      </nav>
+      <!-- End Navbar -->
+      <!-- Content --> {% block main %} {% endblock %}
+      <!-- JS Global Compulsory  -->
+      <script src="../static/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- JS Implementing Plugins -->
+      <script src="../static/vendor/hs-header/dist/hs-header.min.js"></script>
+      <script src="../static/vendor/list.js/dist/list.min.js"></script>
+      <script src="../static/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+      <script src="../static/vendor/prism/prism.js"></script>
+      <script src="../static/other/vendor/jquery/jquery.min.js"></script>
+      <script src="../static/other/vendor/bootstrap.bundle.min.js"></script>
+      <script src="../static/other/vendor/jquery.easing/jquery.easing.min.js"></script>
+      <script src="../static/other/vendor/waypoints/jquery.waypoints.min.js"></script>
+      <script src="../static/other/vendor/counterup/counterup.min.js"></script>
+      <script src="../static/other/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="../static/other/vendor/venobox/venobox.min.js"></script>
+      <script src="../static/other/vendor/owl.carousel/owl.carousel.min.js"></script>
+      <script src="../static/other/vendor/typed.js/typed.min.js"></script>
+      <script src="../static/other/vendor/aos/aos.js"></script>
+      <!-- JS Front -->
+      <script src="../static/js/theme.min.js"></script>
+      <script src="../static/js/main.js"></script>
+      <!-- JS Plugins Init. -->
+      <script>
+        function enter(event) {
+          if (event.keyCode == 13 && event.shiftKey) {
+            null
+          }
+          if (event.keyCode == 13 && !event.shiftKey) {
+            null
+          }
+        }
+      </script>
+      <script>
+        document.getElementById('input').addEventListener('keydown', function(e) {
+          if (e.key == 'Tab') {
+            e.preventDefault();
+            var start = this.selectionStart;
+            var end = this.selectionEnd;
+            // set textarea value to: text before caret + tab + text after caret
+            this.value = this.value.substring(0, start) + "\t" + this.value.substring(end);
+            // put caret at right position again
+            this.selectionStart = this.selectionEnd = start + 1;
+          }
+        });
+      </script>
+  </body>
+</html>
