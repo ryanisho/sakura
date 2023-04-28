@@ -1,8 +1,8 @@
 import openai
 from revChatGPT.V3 import Chatbot
 
-gpt_key = "KEY HERE"
-openai.api_key = "KEY HERE"
+gpt_key = "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"
+# openai.api_key = "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"
 
 
 def search(input):
@@ -37,7 +37,7 @@ def ntrCustom(input):
 def debugCustom(input):
     chatbot = Chatbot(api_key=gpt_key)
     response = chatbot.ask(
-        f"Given the following prompt, fix bugs in the below function\n\n{input}",
+        f"Given the following prompt, fix bugs in the below function. cite stackoverflow links and code to do this\n\n{input}",
     )
     return response
 
